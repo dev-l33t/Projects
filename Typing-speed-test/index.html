@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Typing Speed Test</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h2>Typing Speed Test</h2>
-    <p id="textDisplay"></p>
-    <textarea id="inputBox" placeholder="Start typing here..." oninput="checkTyping()"></textarea>
-    <div class="info">
-      <p>Time: <span id="timer">0</span>s</p>
-      <p>WPM: <span
+    <p id="sentence"></p>
+    <textarea id="inputArea" placeholder="Start typing here..."></textarea>
+    <div class="stats">
+      <p><strong>Time:</strong> <span id="timer">0</span> sec</p>
+      <p><strong>WPM:</strong> <span id="wpm">0</span></p>
+    </div>
+    <button onclick="startTest()">Start Test</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
