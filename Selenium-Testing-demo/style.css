@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+nav {
+  background-color: #333;
+  color: white;
+  padding: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  color: white;
+  margin: 0 1em;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding: 50px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+h2 {
+  border-left: 5px solid #2196f3;
+  padding-left: 10px;
+}
+
+.form-group {
+  margin: 1em 0;
+}
+
+input, select, button {
+  padding: 0.5em;
+  margin-top: 5px;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
