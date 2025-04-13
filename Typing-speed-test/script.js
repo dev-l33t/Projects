@@ -1,43 +1,43 @@
-const textDisplay = document.getElementById("textDisplay");
-const inputBox = document.getElementById("inputBox");
-const timerDisplay = document.getElementById("timer");
-const wpmDisplay = document.getElementById("wpm");
-const accuracyDisplay = document.getElementById("accuracy");
+const sentences = [
+  "The quick brown fox jumps over the lazy dog.",
+  "Typing is a useful skill to learn and improve.",
+  "Speed and accuracy are both important in typing.",
+  "Practice makes perfect when it comes to typing fast."
+];
 
-let sampleText = "Practice makes perfect. Keep typing to improve your speed and accuracy.";
-let startTime, timerInterval;
+let startTime;
+let timerInterval;
 
 function startTest() {
-  inputBox.disabled = false;
-  inputBox.value = "";
-  inputBox.focus();
-  textDisplay.textContent = sampleText;
-  startTime = new Date();
-  timerDisplay.textContent = "0";
-  wpmDisplay.textContent = "0";
-  accuracyDisplay.textContent = "0%";
-  timerInterval = setInterval(updateTime, 1000);
+  const sentence = sentences[Math.floor(Math.random() * sentences.length)];
+  document.getElementById("sentence").textContent = sentence;
+  document.getElementById("inputArea").value = "";
+  document.getElementById("inputArea").focus();
+  document.getElementById("wpm").textContent = "0";
+  document.getElementById("timer").textContent = "0";
+
+  clearInterval(timerInterval);
+  startTime = new Date().getTime();
+  timerInterval = setInterval(updateTimer, 1000);
+
+  document.getElementById("inputArea").addEventListener("input", checkTyping);
 }
 
-function updateTime() {
-  const currentTime = Math.floor((new Date() - startTime) / 1000);
-  timerDisplay.textContent = currentTime;
+function updateTimer() {
+  const currentTime = new Date().getTime();
+  const elapsed = Math.floor((currentTime - startTime) / 1000);
+  document.getElementById("timer").textContent = elapsed;
 }
 
 function checkTyping() {
-  const typedText = inputBox.value;
-  const originalText = sampleText;
+  const typed = document.getElementById("inputArea").value.trim();
+  const target = document.getElementById("sentence").textContent.trim();
 
-  if (typedText === originalText) {
+  if (typed === target) {
     clearInterval(timerInterval);
-    const totalTime = Math.floor((new Date() - startTime) / 1000);
-    const wordCount = originalText.split(" ").length;
-    const wpm = Math.round((wordCount / totalTime) * 60);
-    const correctChars = typedText.split("").filter((ch, i) => ch === originalText[i]).length;
-    const accuracy = Math.round((correctChars / originalText.length) * 100);
-
-    wpmDisplay.textContent = wpm;
-    accuracyDisplay.textContent = accuracy + "%";
-    inputBox.disabled = true;
+    const elapsed = parseInt(document.getElementById("timer").textContent);
+    const wordCount = target.split(" ").length;
+    const wpm = Math.round((wordCount / elapsed) * 60);
+    document.getElementById("wpm").textContent = wpm;
   }
 }
