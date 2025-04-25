@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Selenium Testing demo site</title>
+  <title>Selenium Testing Hub</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f1f3f5;
+      background: #f4f7fc;
       color: #333;
     }
     header {
       background-color: #0066cc;
       color: white;
-      padding: 2rem;
+      padding: 3rem 2rem;
       text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      margin-bottom: 1rem;
     }
     header p {
       font-size: 1.1rem;
     }
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 1.5rem;
     }
@@ -65,7 +67,7 @@
     }
     .intro {
       background-color: #e7f1ff;
-      padding: 1.5rem;
+      padding: 2rem;
       border-radius: 8px;
       margin-bottom: 2rem;
       text-align: center;
@@ -74,23 +76,74 @@
       font-size: 1.1rem;
       margin-top: 0.5rem;
     }
+    .cta-button {
+      display: inline-block;
+      background-color: #0044cc;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-top: 2rem;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #003399;
+    }
+    .form-container {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 3rem;
+      text-align: center;
+    }
+    input[type="text"], input[type="email"], textarea {
+      width: 80%;
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    textarea {
+      height: 120px;
+    }
+    button {
+      background-color: #0066cc;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0044cc;
+    }
+    .footer {
+      background-color: #f1f3f5;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 3rem;
+      border-top: 1px solid #ddd;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Selenium Testing Practice Hub</h1>
-    <p>Welcome to the practice hub! Improve your Selenium automation skills by testing various features and challenges.</p>
+    <h1>Selenium Testing Hub</h1>
+    <p>Welcome to your Selenium testing playground. Choose from various tests, challenges, and categories to improve your skills.</p>
   </header>
 
   <div class="container">
     <div class="intro">
       <h2>Getting Started</h2>
-      <p>Choose a test from below to practice your Selenium skills. These pages are designed to help you learn and improve in real-world scenarios.</p>
+      <p>Ready to dive into testing? Choose a category or challenge from the sections below. These are designed to test your knowledge and improve your automation skills using Selenium.</p>
+      <a href="#test-pages" class="cta-button">Explore Test Pages</a>
     </div>
 
     <h2>Available Test Pages</h2>
-    <ul>
+    <ul id="test-pages">
       <li><a href="login.html">Login Form Test</a></li>
       <li><a href="register.html">Registration Form Test</a></li>
       <li><a href="checkboxes.html">Checkboxes and Radios</a></li>
@@ -98,6 +151,10 @@
       <li><a href="dynamic.html">Dynamic Elements Test</a></li>
       <li><a href="alerts.html">JavaScript Alerts</a></li>
       <li><a href="navigation.html">Page Navigation</a></li>
+      <li><a href="iframes.html">Iframes Handling</a></li>
+      <li><a href="cookies.html">Cookies Test</a></li>
+      <li><a href="file-upload.html">File Upload Test</a></li>
+      <li><a href="search.html">Search Functionality</a></li>
     </ul>
 
     <h2>Practice Challenges</h2>
@@ -105,17 +162,49 @@
       <li><a href="challenge-login-multi.html">Login with OTP & Captcha</a></li>
       <li><a href="challenge-cart.html">Add to Cart & Checkout Flow</a></li>
       <li><a href="challenge-pagination.html">Pagination & Table Data</a></li>
+      <li><a href="challenge-dynamic-list.html">Dynamic List Handling</a></li>
+      <li><a href="challenge-modal-popup.html">Modal Popup Test</a></li>
+      <li><a href="challenge-multi-tab.html">Multiple Tab Handling</a></li>
     </ul>
 
     <h2>Test Categories</h2>
     <ul>
-      <li><a href="forms.html">Forms</a></li>
-      <li><a href="interactions.html">Interactions</a></li>
-      <li><a href="alerts.html">Alerts</a></li>
-      <li><a href="dynamic.html">Dynamic Elements</a></li>
+      <li><a href="forms.html">Forms (Text Inputs, Dropdowns)</a></li>
+      <li><a href="interactions.html">Interactions (Clicks, Hover)</a></li>
+      <li><a href="alerts.html">Alerts (Alert, Confirm, Prompt)</a></li>
+      <li><a href="dynamic.html">Dynamic Elements (Loading, Visibility)</a></li>
       <li><a href="iframes.html">Iframes</a></li>
+      <li><a href="cookies.html">Cookies and Session Management</a></li>
+      <li><a href="file-upload.html">File Upload and Download</a></li>
+      <li><a href="handling-frames.html">Handling Frames and Windows</a></li>
+      <li><a href="test-performance.html">Test Performance (Load Speed, Network)</a></li>
+      <li><a href="image-verification.html">Image Verification and Testing</a></li>
     </ul>
+
+    <div class="form-container">
+      <h2>Give Us Feedback</h2>
+      <p>Got any feedback or suggestions to improve the platform? Fill out the form below to let us know!</p>
+      <form id="feedback-form">
+        <input type="text" id="name" placeholder="Your Name" required><br>
+        <input type="email" id="email" placeholder="Your Email" required><br>
+        <textarea id="feedback" placeholder="Your Feedback" required></textarea><br>
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </div>
+
   </div>
+
+  <div class="footer">
+    <p>&copy; 2025 Selenium Testing Hub. All rights reserved.</p>
+  </div>
+
+  <script>
+    document.getElementById('feedback-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('Thank you for your feedback!');
+      document.getElementById('feedback-form').reset();
+    });
+  </script>
 
 </body>
 </html>
