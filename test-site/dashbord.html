@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f8;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .welcome {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .stats {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 1 1 200px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin: 0;
+      color: #007BFF;
+    }
+
+    .card p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .actions {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .actions a {
+      flex: 1 1 150px;
+      text-align: center;
+      background-color: #007BFF;
+      color: white;
+      padding: 12px 0;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .actions a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>User Dashboard</h1>
+  </header>
+
+  <div class="container">
+    <div class="welcome">
+      Welcome back, <strong>John Doe</strong>!
+    </div>
+
+    <div class="stats">
+      <div class="card">
+        <h3>12</h3>
+        <p>Orders</p>
+      </div>
+      <div class="card">
+        <h3>3</h3>
+        <p>Messages</p>
+      </div>
+      <div class="card">
+        <h3>$245.00</h3>
+        <p>Wallet</p>
+      </div>
+      <div class="card">
+        <h3>Gold</h3>
+        <p>Membership</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="#">Profile</a>
+      <a href="#">Change Password</a>
+      <a href="#">Orders</a>
+      <a href="#">Logout</a>
+    </div>
+  </div>
+
+</body>
+</html>
