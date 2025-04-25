@@ -3,126 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login Page</title>
+  <title>Login</title>
   <style>
     * {
       box-sizing: border-box;
     }
 
     body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      height: 100vh;
     }
 
     .login-container {
-      background-color: white;
-      padding: 40px;
+      background: white;
+      padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       width: 100%;
       max-width: 400px;
     }
 
-    .login-container h2 {
+    h2 {
       text-align: center;
-      margin-bottom: 30px;
-      color: #333;
-    }
-
-    .form-group {
       margin-bottom: 20px;
     }
 
+    .form-group {
+      margin-bottom: 15px;
+    }
+
     .form-group label {
+      font-weight: 600;
       display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-      color: #444;
+      margin-bottom: 6px;
     }
 
     .form-group input {
       width: 100%;
-      padding: 12px;
+      padding: 10px;
+      border-radius: 6px;
       border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
     }
 
-    .login-btn {
+    .btn {
       width: 100%;
       padding: 12px;
-      background-color: #4CAF50;
+      background-color: #007bff;
       border: none;
-      border-radius: 8px;
-      font-size: 16px;
       color: white;
+      font-size: 16px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      margin-top: 10px;
     }
 
-    .login-btn:hover {
-      background-color: #45a049;
+    .btn:hover {
+      background-color: #0056b3;
     }
 
-    .forgot {
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 6px;
+      text-align: center;
+    }
+
+    .success {
+      color: green;
+      font-size: 14px;
+      margin-top: 6px;
+      text-align: center;
+    }
+
+    .bottom-link {
       text-align: center;
       margin-top: 15px;
     }
 
-    .forgot a {
-      color: #333;
+    .bottom-link a {
+      color: #007bff;
       text-decoration: none;
-      font-size: 14px;
     }
 
-    .forgot a:hover {
-      text-decoration: underline;
-    }
-      .registration-link {
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    .registration-link a {
-      color: #333;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    .registration-link a:hover {
-      text-decoration: underline;
+    @media (max-width: 500px) {
+      .login-container {
+        margin: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="login-container">
-    <h2>Login</h2>
-    <form>
-      <div class="form-group">
-        <label for="username">Username or Email</label>
-        <input type="text" id="username" name="username" placeholder="Enter your username" required />
-      </div>
+<div class="login-container">
+  <h2>Login</h2>
+  <form id="loginForm">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" required placeholder="you@example.com" />
+    </div>
 
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required />
-      </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" required placeholder="Enter your password" />
+    </div>
 
-      <button type="submit" class="login-btn">Login</button>
-      <div class="forgot">
-        <a href="forgot.html">Forgot Password?</a>
-      </div>
-       <div class="registration-link">
-        Create New account? <a href="registration.html">Register here</a>
-      </div>
-    </form>
+    <div class="error" id="errorMsg"></div>
+    <div class="success" id="successMsg"></div>
+
+    <button type="submit" class="btn">Login</button>
+  </form>
+
+  <div class="bottom-link">
+    Don’t have an account? <a href="registration.html">Register</a>
   </div>
+</div>
+
+<script>
+  const loginForm = document.getElementById("loginForm");
+  const errorMsg = document.getElementById("errorMsg");
+  const successMsg = document.getElementById("successMsg");
+
+  const SAMPLE_EMAIL = "user@example.com";
+  const SAMPLE_PASSWORD = "password123";
+
+  loginForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    // Reset messages
+    errorMsg.textContent = "";
+    successMsg.textContent = "";
+
+    // Validation
+    if (!email || !password) {
+      errorMsg.textContent = "All fields are required.";
+      return;
+    }
+
+    if (email === SAMPLE_EMAIL && password === SAMPLE_PASSWORD) {
+      successMsg.textContent = "Login successful! Redirecting...";
+      setTimeout(() => {
+        window.location.href = "profile.html";
+      }, 1500);
+    } else {
+      errorMsg.textContent = "Invalid email or password.";
+    }
+  });
+</script>
 
 </body>
 </html>
