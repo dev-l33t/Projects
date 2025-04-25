@@ -23,7 +23,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 40px auto;
       background: white;
       padding: 30px;
@@ -41,18 +41,18 @@
       border-collapse: collapse;
     }
 
-    table thead {
+    thead {
       background-color: #007BFF;
       color: white;
     }
 
-    table th, table td {
-      padding: 12px 15px;
+    th, td {
+      padding: 12px;
       border: 1px solid #ddd;
       text-align: center;
     }
 
-    table tbody tr:nth-child(even) {
+    tbody tr:nth-child(even) {
       background-color: #f9f9f9;
     }
 
@@ -76,6 +76,40 @@
       background-color: #dc3545;
       color: white;
     }
+
+    /* Responsive table styling */
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 10px;
+      }
+
+      td {
+        padding: 10px;
+        text-align: right;
+        position: relative;
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        font-weight: bold;
+        text-align: left;
+      }
+    }
   </style>
 </head>
 <body>
@@ -98,25 +132,25 @@
       </thead>
       <tbody>
         <tr>
-          <td>#1001</td>
-          <td>2025-04-20</td>
-          <td>3 items</td>
-          <td>$89.99</td>
-          <td><span class="status delivered">Delivered</span></td>
+          <td data-label="Order ID">#1001</td>
+          <td data-label="Date">2025-04-20</td>
+          <td data-label="Items">3 items</td>
+          <td data-label="Total">$89.99</td>
+          <td data-label="Status"><span class="status delivered">Delivered</span></td>
         </tr>
         <tr>
-          <td>#1002</td>
-          <td>2025-04-18</td>
-          <td>2 items</td>
-          <td>$45.50</td>
-          <td><span class="status processing">Processing</span></td>
+          <td data-label="Order ID">#1002</td>
+          <td data-label="Date">2025-04-18</td>
+          <td data-label="Items">2 items</td>
+          <td data-label="Total">$45.50</td>
+          <td data-label="Status"><span class="status processing">Processing</span></td>
         </tr>
         <tr>
-          <td>#1003</td>
-          <td>2025-04-15</td>
-          <td>1 item</td>
-          <td>$19.99</td>
-          <td><span class="status cancelled">Cancelled</span></td>
+          <td data-label="Order ID">#1003</td>
+          <td data-label="Date">2025-04-15</td>
+          <td data-label="Items">1 item</td>
+          <td data-label="Total">$19.99</td>
+          <td data-label="Status"><span class="status cancelled">Cancelled</span></td>
         </tr>
       </tbody>
     </table>
