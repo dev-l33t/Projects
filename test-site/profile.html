@@ -25,11 +25,40 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       position: relative;
+      text-align: center;
+    }
+
+    .profile-pic {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .profile-pic img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #007bff;
+    }
+
+    .profile-pic input {
+      display: none;
+    }
+
+    .upload-icon {
+      position: absolute;
+      bottom: 0;
+      right: 5px;
+      background: #007bff;
+      color: #fff;
+      padding: 6px;
+      border-radius: 50%;
+      cursor: pointer;
     }
 
     h2 {
-      text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .edit-icon {
@@ -42,6 +71,7 @@
     }
 
     .form-group {
+      text-align: left;
       margin-bottom: 20px;
     }
 
@@ -111,8 +141,17 @@
 <body>
 
 <div class="container">
-  <h2>User Profile</h2>
   <i class="fas fa-pen edit-icon" id="editBtn" title="Edit Profile"></i>
+
+  <div class="profile-pic">
+    <label for="profileImage">
+      <img src="https://via.placeholder.com/120" alt="Profile" id="profilePreview"/>
+      <div class="upload-icon"><i class="fas fa-camera"></i></div>
+    </label>
+    <input type="file" id="profileImage" accept="image/*" />
+  </div>
+
+  <h2>User Profile</h2>
 
   <form id="profileForm" novalidate>
     <div class="form-group">
@@ -153,7 +192,7 @@
 <script>
   const editBtn = document.getElementById("editBtn");
   const form = document.getElementById("profileForm");
-  const inputs = form.querySelectorAll("input");
+  const inputs = form.querySelectorAll("input:not([type='file'])");
   const saveBtn = document.getElementById("saveBtn");
   const successMsg = document.getElementById("successMsg");
 
@@ -162,6 +201,20 @@
   const phoneError = document.getElementById("phoneError");
   const cityError = document.getElementById("cityError");
   const countryError = document.getElementById("countryError");
+
+  const profileImage = document.getElementById("profileImage");
+  const profilePreview = document.getElementById("profilePreview");
+
+  profileImage.addEventListener("change", function() {
+    const file = this.files[0];
+    if (file && file.type.startsWith("image/")) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        profilePreview.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  });
 
   editBtn.addEventListener("click", () => {
     inputs.forEach(input => input.disabled = false);
