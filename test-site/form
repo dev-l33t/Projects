@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <style type="text/css">.feature-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.feature-item {
+  background: #f7f9fc;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.feature-item h3 a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.feature-item h3 a:hover {
+  text-decoration: underline;
+}
+
+.feature-item p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+</style>
+
+</head>
+<body>
+
+
+<section class="forms-testing">
+  <h2>📝 Forms Testing</h2>
+  <div class="feature-list">
+
+    <div class="feature-item">
+      <h3><a href="pages/login-form.html">🔑 Login Form</a></h3>
+      <p>Test user login with valid/invalid credentials, empty fields, and password visibility toggles.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/registration-form.html">🆕 Registration Form</a></h3>
+      <p>Validate new user registrations, mandatory fields, strong password validation, and duplicate email handling.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/contact-form.html">📞 Contact Us Form</a></h3>
+      <p>Test form submission, input validation (email, phone number), and message sending with/without attachments.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/forgot-password.html">🔒 Forgot Password</a></h3>
+      <p>Verify password recovery process, email input validation, and error handling for unregistered accounts.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/feedback-form.html">💬 Feedback Form</a></h3>
+      <p>Test star ratings, comments section, character limits, and optional vs required fields.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/search-form.html">🔍 Search Form</a></h3>
+      <p>Validate search inputs, clear search functionality, suggestions while typing, and result accuracy.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/subscription-form.html">📬 Newsletter Subscription</a></h3>
+      <p>Test email address validations, handling of already subscribed users, and success/error messages.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/file-upload-form.html">📂 File Upload Form</a></h3>
+      <p>Test uploading valid/invalid file types, size restrictions, progress bars, and file preview options.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/payment-form.html">💳 Payment Form</a></h3>
+      <p>Test card number format, CVV, expiry validation, error messaging for invalid inputs, and success transactions.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/multi-step-form.html">🚀 Multi-Step Form</a></h3>
+      <p>Test form divided across multiple steps, data persistence between steps, navigation (next/back) validation, and final submission.</p>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
