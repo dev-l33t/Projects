@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>UI Testing - Pratik Joshi</title>
+	<style>
+/* Section Common Style */
+section {
+  padding: 40px 20px;
+  background: #f9f9f9;
+}
+section:nth-child(even) {
+  background: #ffffff;
+}
+section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* Feature List Grid */
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Feature Card */
+.feature-item {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Hover Effect */
+.feature-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+/* Feature Title */
+.feature-item h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* Feature Link */
+.feature-item h3 a {
+  text-decoration: none;
+  color: #34495e;
+}
+.feature-item h3 a:hover {
+  color: #3498db;
+}
+
+/* Description Text */
+.feature-item p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+</style>
+
+</head>
+<body>
+	<section class="ui-components-testing">
+  <h2>🎨 UI Components Testing</h2>
+  <div class="feature-list">
+
+    <div class="feature-item">
+      <h3><a href="pages/dropdown.html">⬇️ Dropdown Menus</a></h3>
+      <p>Test opening, closing, selecting an option, and ensuring accessibility via keyboard navigation.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/loader.html">⏳ Loaders and Spinners</a></h3>
+      <p>Validate appearance during page/data loads and ensure loaders disappear after completion.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/progress-bar.html">📊 Progress Bars</a></h3>
+      <p>Test progress bar movement, percentage updates, and completion states visually and functionally.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/charts.html">📈 Charts and Graphs</a></h3>
+      <p>Verify correct data rendering in charts (bar, pie, line) and responsive resizing behavior.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/modals.html">🖼️ Modal Popups</a></h3>
+      <p>Test opening, closing modals, backdrop clicks, and escape key functionality.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/toast.html">🍞 Toast Notifications</a></h3>
+      <p>Test auto-hiding notification alerts, appearance timing, and click-to-dismiss actions.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/tooltips.html">💬 Tooltips</a></h3>
+      <p>Test tooltip visibility on hover/focus and ensure correct positioning and timing delays.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/accordion.html">📚 Accordion Panels</a></h3>
+      <p>Test expanding and collapsing multiple accordion sections and maintaining their state.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/carousel.html">🖼️ Image Carousels</a></h3>
+      <p>Test carousel sliding, next/previous controls, auto-play, and manual interactions.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/pagination.html">📄 Pagination Controls</a></h3>
+      <p>Test navigating between pages of content, disabling previous/next buttons at limits.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/slider.html">🎚️ Sliders and Range Inputs</a></h3>
+      <p>Test adjusting values using sliders, min/max limits, and real-time feedback updates.</p>
+    </div>
+
+  </div>
+</section>
+
+
+</body>
+</html>
