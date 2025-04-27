@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Functional Testing - Pratik Joshi</title>
+  <style type="text/css">.feature-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.feature-item {
+  background: #f7f9fc;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.feature-item h3 a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.feature-item h3 a:hover {
+  text-decoration: underline;
+}
+
+.feature-item p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+</style>
+</head>
+<body>
+  <section id="test-functionality" class="section">
+  <h2>Essential User Functionality Tests</h2>
+  <p>Practice real-world flows like login, registration, password management, and field validations. Test both positive and negative scenarios efficiently.</p>
+
+  <div class="feature-list">
+    <div class="feature-item">
+      <h3><a href="pages/login.html">🔑 Login Flow</a></h3>
+      <p>Test login with valid, invalid, locked, and expired credentials.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/registration.html">📝 Registration Process</a></h3>
+      <p>Validate required fields, duplicate emails, password rules, and success redirects.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/forgot-password.html">🔒 Forgot Password</a></h3>
+      <p>Check email/OTP reset, invalid email cases, and success confirmations.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/change-password.html">🔑 Change Password</a></h3>
+      <p>Test correct old password, mismatched new passwords, and security validations.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/validation.html">✅ Field Validation Testing</a></h3>
+      <p>Confirm required inputs, invalid format handling, and dynamic error messages.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/user-profile.html">👤 User Profile Management</a></h3>
+      <p>Verify data updates, email changes, and UI consistency after saving updates.</p>
+    </div>
+  </div>
+</section>
+
+<section id="functional-testing" class="section">
+  <h2>Comprehensive Functional Testing Features</h2>
+  <p>Test core user functionalities, form handling, ecommerce flows, data operations, notifications, and more through practical examples.</p>
+
+  <div class="feature-list">
+
+    <div class="feature-item">
+      <h3><a href="pages/authentication.html">🔐 Authentication & Authorization</a></h3>
+      <p>Test login/logout, registration, forgot password, session expiry, and 2FA flows.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/forms.html">📝 Form Validations</a></h3>
+      <p>Validate required fields, format checks, multi-step forms, dependent dropdowns, and file uploads.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/transactions.html">🛒 E-commerce Transactions</a></h3>
+      <p>Test add-to-cart, checkout flows, payment success/failure, and order confirmation pages.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/data-management.html">📂 Data Management</a></h3>
+      <p>Perform CRUD operations, pagination, search, sort, and filter functionalities.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/notifications.html">📬 Notifications Handling</a></h3>
+      <p>Test email, SMS, push notifications, and contact form submissions with feedback.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/ui-actions.html">🧪 UI and Interactive Elements</a></h3>
+      <p>Test tabs, accordions, carousels, modals, tooltips, and responsive layouts including hamburger menu.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/content-display.html">🗃️ Content Management</a></h3>
+      <p>Test display of blogs, FAQs, image galleries, PDF embedding, and video playback.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/security.html">🔒 Security Functional Testing</a></h3>
+      <p>Validate access control, secure submissions, and prevent XSS, CSRF, SQL injection vulnerabilities.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/system-settings.html">🧹 System Settings and Preferences</a></h3>
+      <p>Test theme switching, profile editing, account deletion, and localization/multilanguage settings.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/advanced-ui.html">⚙️ Advanced User Interactions</a></h3>
+      <p>Practice drag & drop, sortable lists, date pickers, lazy loading, and scroll-to-top features.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="test-functionality" class="section">
+  <h2>Essential Functional Testing Scenarios</h2>
+  <p>Test common real-world user flows like login, forms, cart management, and simple UI actions designed for beginners and practice projects.</p>
+
+  <div class="feature-list">
+    <div class="feature-item">
+      <h3><a href="pages/login.html">🔑 Login and Logout</a></h3>
+      <p>Test valid/invalid login attempts and successful logout handling.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/registration.html">📝 Registration Form</a></h3>
+      <p>Validate required fields, email format, and password confirmation during sign-up.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/forgot-password.html">🔒 Forgot Password Flow</a></h3>
+      <p>Check email input for password reset and validate success/error responses.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/cart.html">🛒 Cart Management</a></h3>
+      <p>Test adding, removing, and updating items inside the shopping cart.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/fields.html">✅ Input Fields Validation</a></h3>
+      <p>Practice testing different input types: text, radio buttons, checkboxes, and selects.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/profile.html">👤 Profile Update</a></h3>
+      <p>Verify name, email, and password updates are saved and shown correctly.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/notifications.html">📬 Success and Error Messages</a></h3>
+      <p>Ensure correct notification appears after form submission actions.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/ui-interactions.html">🧪 UI Element Testing</a></h3>
+      <p>Test tabs, modals, and simple button interactions across the pages.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/file-upload.html">📂 File Upload</a></h3>
+      <p>Test uploading images and documents and validate the file type restrictions.</p>
+    </div>
+
+    <div class="feature-item">
+      <h3><a href="pages/table.html">🔄 Table Search and Sort</a></h3>
+      <p>Test searching, sorting, and navigating through paginated data tables.</p>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
