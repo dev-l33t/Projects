@@ -20,4 +20,9 @@ fetch('navbar.html')
         navLinks.classList.remove('show');
       });
     });
+    // Close the menu if the user clicks anywhere outside the navLinks or hamburger
+document.addEventListener('click', (event) => {
+  if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+    navLinks.classList.remove('show');
+  }
   });
