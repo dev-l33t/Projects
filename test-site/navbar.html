@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    /* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #f6f8fc, #e3f2fd);
+  color: #222;
+  line-height: 1.6;
+}
+
+header {
+  background: #1e88e5;
+  padding: .5rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+
+/* Navbar Styles */
+.navbar {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2px;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+}
+  </style>
+</head>
+<body>
+
+    <header>
+  <nav class="navbar">
+    <div class="logo">Testing Demo Site</div>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#input-fields">Input-Fields</a></li>
+      <li><a href="switchto.html">Switch To</a></li>
+      <li><a href="interactions.html">Interactions</a></li>
+      <li><a href="widget.html">Widgets</a></li>
+      <li><a href="form.html">Forms</a></li>
+      <li><a href="uitest.html">Other</a></li>
+      <li><a href="#types">Test Types</a></li>
+      <li><a href="practice.html" onclick="return false;">Demo Sites</a></li>
+    </ul>
+  </nav>
+</header>
+
+</body>
+</html>
