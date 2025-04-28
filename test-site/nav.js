@@ -3,7 +3,7 @@ fetch('navbar.html')
   .then(response => response.text())
   .then(data => {
     // Inject navbar HTML into the placeholder
-    document.getElementById('navbar-placeholder').innerHTML = data;
+    document.getElementById('header-nav').innerHTML = data;
     
     // After the navbar is loaded, add the event listeners
     const hamburger = document.getElementById('hamburger');
