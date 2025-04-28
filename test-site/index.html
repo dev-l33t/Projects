@@ -8,29 +8,7 @@
 </head>
 <body>
 
-    <header>
-  <nav class="navbar">
-    <div class="logo">Testing Demo Site</div>
-
-    <!-- Hamburger Icon -->
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#input-fields">Input-Fields</a></li>
-      <li><a href="switchto.html">Switch To</a></li>
-      <li><a href="interactions.html">Interactions</a></li>
-      <li><a href="widget.html">Widgets</a></li>
-      <li><a href="form.html">Forms</a></li>
-      <li><a href="uitest.html">Other</a></li>
-      <li><a href="#types">Test Types</a></li>
-      <li><a href="practice.html" onclick="return false;">Demo Sites</a></li>
-    </ul>
-  </nav>
-</header>
+  <header id="header-nav"></header>
 
   <main>
     <section id="intro" class="section">
@@ -169,21 +147,7 @@
     <p>© 2025 Testing Demo Hub. Designed for learning, practicing, and automation.</p>
   </footer>
 
- <script>
-  function toggleMenu() {
-    const navLinks = document.getElementById('navLinks');
-    navLinks.classList.toggle('show');
-  }
-
-  // Close menu when any link is clicked on mobile
-  const links = document.querySelectorAll('.nav-links a');
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      const navLinks = document.getElementById('navLinks');
-      navLinks.classList.remove('show');
-    });
-  });
-</script>
+ <script src="nav.js"></script>
 
 </body>
 </html>
