@@ -5,38 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alert Handling Page</title>
     <style>
-        /* Ensures the body and html take the full height */
-        html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
             background-color: #f9f9f9;
         }
-
-        /* Main wrapper to center content */
-        .main-wrapper {
-            text-align: center;
-            width: 100%;
-            max-width: 800px; /* Adjust as needed for desired width */
-            padding: 20px;
-            box-sizing: border-box;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-    
-
-        /* Headline (centered) */
         h2 {
             color: #333;
-            margin-bottom: 20px;
+            text-align: center;
         }
-
-        /* Button Styling */
         button {
             margin: 10px;
             padding: 12px 20px;
@@ -48,8 +26,6 @@
             max-width: 300px;
             display: inline-block;
         }
-
-        /* Button color classes */
         button.basic { background-color: #4CAF50; color: white; }
         button.confirm { background-color: #FF9800; color: white; }
         button.prompt { background-color: #2196F3; color: white; }
@@ -60,45 +36,50 @@
         button.error { background-color: #f44336; color: white; }
         button.success { background-color: #8bc34a; color: white; }
         button.info { background-color: #2196F3; color: white; }
-
-        /* Alerts (hidden initially) */
-        #custom-alert, #toast, #slidein-alert {
+        
+        #custom-alert {
             display: none;
             position: fixed;
-            width: 80%;
-            max-width: 400px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 5px;
-            padding: 15px;
-            color: white;
-            text-align: center;
-        }
-
-        #custom-alert {
-            background-color: #333;
             top: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
         }
 
         #toast {
-            background-color: #333;
+            position: fixed;
             bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
         }
 
         #slidein-alert {
-            background-color: #009688;
+            display: none;
+            position: fixed;
             bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #009688;
+            color: white;
+            padding: 15px;
             width: 100%;
             text-align: center;
         }
 
         /* Media Queries for Mobile */
-        @media (max-width: 780px) {
+        @media (max-width: 768px) {
             button {
-                font-size: 18px; /* Increased font size */
-                padding: 15px 25px; /* Increased padding for better touch */
-                width: 90%; /* Ensures buttons are responsive */
-                max-width: 350px; /* Button max-width increase */
+                font-size: 20px;
+                padding: 8px;
+                width: 90%;
+                height:30px ;
             }
 
             h2 {
@@ -114,7 +95,8 @@
         @media (max-width: 480px) {
             button {
                 font-size: 15px;
-                padding: 10px 15px; /* Adjust padding for small screens */
+                padding: 5px;
+                   height:20px ;
             }
 
             h2 {
@@ -129,120 +111,116 @@
     </style>
 </head>
 <body>
- <header id="header-nav"></header>
-   <!-- Wrapper for centering content -->
-   <div class="main-wrapper">
-     
+   <header id="header-nav"></header>
 
-      <h2>Alert Handling Demo</h2>
-      <p>Click the buttons below to test different types of alerts:</p>
+<h2>Alert Handling Demo</h2>
+<p>Click the buttons below to test different types of alerts:</p>
 
-      <button class="basic" onclick="basicAlert()">Basic Alert</button>
-      <button class="confirm" onclick="confirmAlert()">Confirmation Alert</button>
-      <button class="prompt" onclick="promptAlert()">Prompt Alert</button>
-      <button class="timeout" onclick="timeoutAlert()">Timeout Alert</button>
-      <button class="custom" onclick="customAlert()">Custom Alert</button>
-      <button class="toast" onclick="toastAlert()">Toast Notification</button>
-      <button class="slidein" onclick="slideinAlert()">Slide-in Alert</button>
-      <button class="error" onclick="errorAlert()">Error Alert</button>
-      <button class="success" onclick="successAlert()">Success Alert</button>
-      <button class="info" onclick="infoAlert()">Info Alert</button>
+<button class="basic" onclick="basicAlert()">Basic Alert</button>
+<button class="confirm" onclick="confirmAlert()">Confirmation Alert</button>
+<button class="prompt" onclick="promptAlert()">Prompt Alert</button>
+<button class="timeout" onclick="timeoutAlert()">Timeout Alert</button>
+<button class="custom" onclick="customAlert()">Custom Alert</button>
+<button class="toast" onclick="toastAlert()">Toast Notification</button>
+<button class="slidein" onclick="slideinAlert()">Slide-in Alert</button>
+<button class="error" onclick="errorAlert()">Error Alert</button>
+<button class="success" onclick="successAlert()">Success Alert</button>
+<button class="info" onclick="infoAlert()">Info Alert</button>
 
-      <!-- Custom Alert -->
-      <div id="custom-alert">This is a custom alert!</div>
+<!-- Custom Alert -->
+<div id="custom-alert">This is a custom alert!</div>
 
-      <!-- Toast Notification -->
-      <div id="toast">This is a Toast Notification!</div>
+<!-- Toast Notification -->
+<div id="toast">This is a Toast Notification!</div>
 
-      <!-- Slide-in Alert -->
-      <div id="slidein-alert">This is a slide-in alert that will disappear in 3 seconds!</div>
-   </div>
+<!-- Slide-in Alert -->
+<div id="slidein-alert">This is a slide-in alert that will disappear in 3 seconds!</div>
 
-   <script>
-      // Basic Alert
-      function basicAlert() {
-          alert("This is a basic alert!");
-      }
+<script>
+    // Basic Alert
+    function basicAlert() {
+        alert("This is a basic alert!");
+    }
 
-      // Confirmation Alert
-      function confirmAlert() {
-          if (confirm("Do you want to proceed?")) {
-              alert("You clicked OK!");
-          } else {
-              alert("You clicked Cancel!");
-          }
-      }
+    // Confirmation Alert
+    function confirmAlert() {
+        if (confirm("Do you want to proceed?")) {
+            alert("You clicked OK!");
+        } else {
+            alert("You clicked Cancel!");
+        }
+    }
 
-      // Prompt Alert
-      function promptAlert() {
-          const input = prompt("Enter your name:");
-          if (input) {
-              alert("Hello, " + input + "!");
-          } else {
-              alert("No name entered.");
-          }
-      }
+    // Prompt Alert
+    function promptAlert() {
+        const input = prompt("Enter your name:");
+        if (input) {
+            alert("Hello, " + input + "!");
+        } else {
+            alert("No name entered.");
+        }
+    }
 
-      // Timeout Alert
-      function timeoutAlert() {
-          const alertBox = document.createElement('div');
-          alertBox.innerHTML = "This will close in 3 seconds...";
-          alertBox.style.backgroundColor = "#673AB7";
-          alertBox.style.color = "white";
-          alertBox.style.padding = "10px";
-          alertBox.style.position = "fixed";
-          alertBox.style.top = "20px";
-          alertBox.style.right = "20px";
-          alertBox.style.borderRadius = "5px";
-          document.body.appendChild(alertBox);
+    // Timeout Alert
+    function timeoutAlert() {
+        const alertBox = document.createElement('div');
+        alertBox.innerHTML = "This will close in 3 seconds...";
+        alertBox.style.backgroundColor = "#673AB7";
+        alertBox.style.color = "white";
+        alertBox.style.padding = "10px";
+        alertBox.style.position = "fixed";
+        alertBox.style.top = "20px";
+        alertBox.style.right = "20px";
+        alertBox.style.borderRadius = "5px";
+        document.body.appendChild(alertBox);
 
-          setTimeout(() => {
-              alertBox.remove();
-          }, 3000);
-      }
+        setTimeout(() => {
+            alertBox.remove();
+        }, 3000);
+    }
 
-      // Custom Alert
-      function customAlert() {
-          const alertDiv = document.getElementById("custom-alert");
-          alertDiv.style.display = "block";
-          setTimeout(() => {
-              alertDiv.style.display = "none";
-          }, 3000);
-      }
+    // Custom Alert
+    function customAlert() {
+        const alertDiv = document.getElementById("custom-alert");
+        alertDiv.style.display = "block";
+        setTimeout(() => {
+            alertDiv.style.display = "none";
+        }, 3000);
+    }
 
-      // Toast Notification
-      function toastAlert() {
-          const toast = document.getElementById("toast");
-          toast.style.display = "block";
-          setTimeout(() => {
-              toast.style.display = "none";
-          }, 3000);
-      }
+    // Toast Notification
+    function toastAlert() {
+        const toast = document.getElementById("toast");
+        toast.style.display = "block";
+        setTimeout(() => {
+            toast.style.display = "none";
+        }, 3000);
+    }
 
-      // Slide-in Alert
-      function slideinAlert() {
-          const slidein = document.getElementById("slidein-alert");
-          slidein.style.display = "block";
-          setTimeout(() => {
-              slidein.style.display = "none";
-          }, 3000);
-      }
+    // Slide-in Alert
+    function slideinAlert() {
+        const slidein = document.getElementById("slidein-alert");
+        slidein.style.display = "block";
+        setTimeout(() => {
+            slidein.style.display = "none";
+        }, 3000);
+    }
 
-      // Error Alert
-      function errorAlert() {
-          alert("Error: Something went wrong!");
-      }
+    // Error Alert
+    function errorAlert() {
+        alert("Error: Something went wrong!");
+    }
 
-      // Success Alert
-      function successAlert() {
-          alert("Success: Everything worked!");
-      }
+    // Success Alert
+    function successAlert() {
+        alert("Success: Everything worked!");
+    }
 
-      // Info Alert
-      function infoAlert() {
-          alert("Info: Here is some information.");
-      }
-   </script>
-   <script src="nav.js"></script>
+    // Info Alert
+    function infoAlert() {
+        alert("Info: Here is some information.");
+    }
+</script>
+<script src="nav.js"></script>
 </body>
 </html>
