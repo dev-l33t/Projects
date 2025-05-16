@@ -1,37 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Quiz Project - Under Construction</title>
-  <style>
+  <title>Quiz App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+   <style>
     body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background-color: #fefefe;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #444;
+    	height: 100vh;
+    	background-image: linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%);
+      font-family: Arial, sans-serif;
     }
+    .quiz{
+    	background-color: blue;
+    	color: white;
+    }
+    .col-md-7{margin-top: 150px !important;
+    background-color:white; }
 
-    .emoji {
-      font-size: 4rem;
+    label {
+      display: block;
+      margin: 10px 0;font-size: 20px;
     }
+    span{font-weight: bold;}
 
-    .message {
-      font-size: 1.5rem;
-      margin-top: 10px;
-      text-align: center;
-    }
+    button{padding: 10px;margin: 5px 0;}
+   
   </style>
 </head>
 <body>
-  <div class="emoji">🚧</div>
-  <div class="message">
-    This project page is under construction.<br>Coming soon!
-  </div>
+	<div class="container">
+
+		<div class="row justify-content-center">
+
+			
+			<div class="col-md-7 shadow-lg p-3 mb-5 bg-white rounded">
+				<h1 class="quiz text-center">Quiz</h1>
+				<div id="quiz">
+
+  <h2 id="question"></h2>
+
+  <label>
+    <input type="radio" name="answer" id="a">
+    <span id="a_value"></span>
+  </label>
+  <label>
+    <input type="radio" name="answer" id="b">
+    <span id="b_value"></span>
+  </label>
+  <label>
+    <input type="radio" name="answer" id="c">
+    <span id="c_value"></span>
+  </label>
+  <label>
+    <input type="radio" name="answer" id="d">
+    <span id="d_value"></span>
+  </label>
+
+  <button class="btn btn-primary" id="submit">Submit</button>
+
+
+</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
 </body>
 </html>
+<script src="./script.js"></script>
